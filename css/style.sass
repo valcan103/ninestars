@@ -1,0 +1,1002 @@
+/*reset*/
+*
+    margin: 0
+    padding: 0
+    // font-family: 'Jua', sans-serif
+    // font-family: 'Raleway', sans-serif //title
+    font-family: 'Open Sans', sans-serif //desc
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td 
+    margin:0
+    padding:0
+a 
+    color: inherit
+    text-decoration: none
+    &:hover
+        text-decoration: none
+        color: inherit
+li 
+    list-style: none
+address, em , i 
+    font-style: none
+h1,h2,h3,h4,h5,h6 
+    font-size: inherit
+
+=gray_subtitle
+    .gray_subtitle
+        font-size: 24px
+        font-weight: 700
+        color: #c2b7b1
+        text-align: center
+=title
+    .title
+        font-size: 32px
+        font-weight: 700
+        color: #4e4039
+        text-align: center
+        &:after
+            content: ""
+            position: absolute
+            width: 60px
+            height: 2px
+            background: #eb5d1e
+            margin: 60px 0
+            left: 50%
+            transform: translateX(-50%)
+.to_top
+    display: none
+    position: fixed
+    right: 1%
+    bottom: 1%
+    background: #eb5d1e
+    width: 45px
+    height: 45px
+    z-index: 10
+    border-radius: 5px
+    cursor: pointer
+    &:after
+        content: "\f062"
+        position: absolute
+        color: #fff
+        font-family: Fontawesome
+        font-size: 20px
+        top: 50%
+        left: 50%
+        transform: translateY(-50%) translateX(-50%)
+    &:hover
+        opacity: 0.7
+header
+    display: flex
+    justify-content: space-between
+    .nav_container
+        display: flex
+        position: fixed
+        width: 100%
+        height: 72px
+        flex-wrap: wrap
+        background: #fff
+        box-shadow: 0px 2px 15px rgb(0 0 0 / 10%)
+        justify-content: space-around
+        align-items: center
+        z-index: 30
+        .logo
+            font-size: 30px
+            letter-spacing: 2px
+            padding-left: 10%
+            font-family: 'Raleway', sans-serif
+            color: #7a6960
+        .nav_right
+            padding-right: 5%
+            font-size: 15px
+            &>ul
+                display: flex
+                justify-content: center
+                align-items: center
+                li
+                    padding: 0 15px
+                    color: #4e4039
+                    &:hover>a
+                        transition: all 0.3s
+                        color: #eb5d1e
+                        cursor: pointer
+                    a.active
+                        color: #eb5d1e
+                li:nth-child(6)>a
+                    &:after
+                        content: "\f107"
+                        position: absolute
+                        font-family: Fontawesome
+                        top: 50%
+                        transform: translateY(-50%)
+                        padding-left: 0.3%
+                .dropdown
+                    display: none
+                    position: relative
+                    background: #fff
+                    box-shadow: 0px 0px 30px rgb(127 137 161 / 25%)
+                    position: absolute
+                    padding: 10px
+                    text-align: left
+                    li
+                        margin: 10px
+                    &>li:nth-child(2)>a:after
+                        content: "\f105"
+                        position: absolute
+                        font-family: Fontawesome
+                        top: 30%
+                        padding-left: 2%
+                    .dropdown2
+                        display: none
+                        background: #fff
+                        box-shadow: 0px 0px 30px rgb(127 137 161 / 30%)
+                        position: absolute
+                        padding: 10% 5%
+                        width: 100%
+                        text-align: center
+                        left: 50%
+                        transform: translateX(45%) translateY(-20%)
+                li:nth-child(7)
+                    padding-left: 20px
+                    margin-left: 20px
+                li:nth-child(8)
+                    background: #eb5d1e
+                    padding: 12px 25px
+                    border-radius: 50px
+                    margin-left: 20px
+                    a
+                        color: #fff
+                    &:hover
+                        opacity: 0.7
+                        transition: all 0.3s
+        .mobile_menu
+            display: none
+            margin-right: 10%
+            color: #4e4039
+            font-size: 25px
+@media screen and (max-width: 1200px) 
+    header
+        .nav_container
+            justify-content: center
+            .logo
+                padding-left: 0
+            .nav_right
+                padding-right: 0
+                margin-left: 50px
+@media screen and (max-width: 999px)
+    header
+        .nav_container
+            justify-content: space-between
+            .logo
+                padding-left: 10%
+            .nav_right
+                display: none
+                margin-left: 0
+                position: fixed
+                overflow: hidden
+                top: 0
+                right: 0
+                left: 0
+                bottom: 0
+                background: rgba(78, 64, 57, 0.9)
+                z-index: 0
+                transition: all 0.3s
+                ul
+                    display: none
+                    background: #fff
+                    position: absolute
+                    top: 55px
+                    right: 15px
+                    left: 15px
+                    bottom: 15px
+                    overflow-y: auto
+                    padding: 10px 0
+                    li
+                        padding: 15px 20px
+                        &:nth-child(6)
+                            &>a:after
+                                top: 37%
+                                right: 5%
+                                transform: none
+                        &:nth-child(7)
+                            margin-left: 0
+                        &:nth-child(8)
+                            margin: 15px
+                        a
+                            color: #7a6960
+                    .dropdown
+                        // display: block
+                        position: static
+                        padding: 0
+                        margin: 10px
+                        li:nth-child(2) > a:after
+                            top: auto
+                            padding-left: 0
+                            right: 10%
+                        .dropdown2
+                            // display: block
+                            position: static
+                            padding: 0
+                            margin: 10px
+                            width: auto
+                            left: 0
+                            transform: none
+                            text-align: left
+            .mobile_menu
+                display: flex
+                cursor: pointer
+                .mobile_close
+                    position: absolute
+                    z-index: 100
+                    color: #fff
+                    top: 10%
+                    right: 3%
+.content1
+    background: #fef8f5
+    border-bottom: 2px solid #fcebe3
+    height: 70vh
+    margin: 72px 0 0
+    display: flex
+    align-items: center
+    padding: 60px 0
+    .cont1_container
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-wrap: wrap
+        .left
+            width: 40%
+            .cont1_title
+                font-size: 48px
+                font-weight: 700
+                line-height: 56px
+                color: #4e4039
+                font-family: 'Raleway', sans-serif
+            .cont1_desc
+                font-size: 24px
+                color: #a08f86
+                margin: 15px 0 30px 0
+            .start
+                font-weight: 500
+                font-size: 16px
+                padding: 10px 30px
+                border-radius: 5px
+                color: #fff
+                background: #eb5d1e
+                cursor: pointer
+                transition: all 0.3s
+        img
+            width: 40%
+            animation: cont1 4s infinite
+@media screen and (max-width: 1000px)
+    .content1
+        padding: 30px 0
+        .cont1_container
+            flex-direction: column-reverse
+            .left
+                width: 80%
+                margin-top: 30px
+            img
+                width: 40%
+@media screen and (max-width: 768px)
+    .content1
+        padding: 30px 0
+        .cont1_container
+            .left
+                width: 70%
+                margin-top: 20px
+                .cont1_title
+                    font-size: 28px
+                    line-height: 36px
+                .cont1_desc
+                    font-size: 18px
+                    line-height: 24px
+            img
+                width: 50%
+@keyframes cont1
+    50%
+        transform: translateY(-30px)
+.content2
+    height: 50%
+    padding: 60px 0
+    .cont2_container
+        display: flex
+        justify-content: space-around
+        align-items: center
+        img
+            width: 35%
+        .right
+            width: 45%
+            .title
+                font-size: 34px
+                font-weight: 700
+                color: #4e4039
+                margin-bottom: 10px
+                font-family: 'Raleway', sans-serif
+            .description
+                font-size: 15px
+                color: #5a6570
+                margin-bottom: 30px
+            .detail_container
+                display: flex
+                justify-content: space-between
+                .detail_left
+                    width: 49%
+                    .detail_title:before
+                        content: "\f70e"
+                        display: block
+                        font-family: Fontawesome
+                        font-size: 40px
+                        margin-bottom: 20px
+                        color: #eb723f
+                .detail_right
+                    width: 49%
+                    .detail_title:before
+                        content: "\f1b2"
+                        display: block
+                        font-family: Fontawesome
+                        font-size: 40px
+                        margin-bottom: 20px
+                        color: #eb723f
+                .detail_title
+                    font-size: 19px
+                    font-weight: 700
+                    color: #7a6960
+                    margin: 5px 0
+                    font-family: 'Raleway', sans-serif
+                .detail_description
+                    font-size: 15px
+                    color: #5a6570
+@media screen and (max-width: 1000px)
+    .content2
+        .cont2_container
+            display: flex
+            flex-direction: column
+            img
+                width: 50%
+            .right
+                width: 80%
+                margin-top: 30px
+@media screen and (max-width: 770px)
+    .content2
+        .cont2_container
+            .right
+                .title
+                    width: 80%
+                .detail_container
+                    flex-direction: column
+                    .detail_left
+                        width: 80%
+                        margin-bottom: 20px
+                    .detail_right
+                        width: 80%
+.content3
+    +gray_subtitle
+    +title
+    padding: 60px 0
+    background: #fef8f5
+    .cont3_container
+        display: flex
+        margin: 50px auto
+        justify-content: space-around
+        width: 90%
+        .card
+            width: 16%
+            background: #fff
+            border-bottom: 3px solid #fff
+            border-radius: 15px
+            padding: 30px
+            box-shadow: 0 10px 30px 10px rgba(68, 88, 144, 10%)
+            transition: all 0.3s
+            &:hover
+                transform: translateY(-5px)
+                border-color: #eb723f
+            .card_title
+                color: #111
+                font-size: 18px
+                font-weight: 700
+                margin-bottom: 15px
+                text-align: center
+            .card_desc
+                font-size: 15px
+                text-align: center
+                line-height: 28px
+            &:nth-child(1) .card_title:before
+                content: "\f1e3"
+                font-family: Fontawesome
+                display: block
+                font-size: 40px
+                margin: 20px 0
+                color: #eb723f
+            &:nth-child(2) .card_title:before
+                content: "\f15b"
+                font-family: Fontawesome
+                display: block
+                font-size: 40px
+                margin: 20px 0
+                color: #eb723f
+            &:nth-child(3) .card_title:before
+                content: "\f14e"
+                font-family: Fontawesome
+                display: block
+                font-size: 40px
+                margin: 20px 0
+                color: #eb723f
+            &:nth-child(4) .card_title:before
+                content: "\f57d"
+                font-family: Fontawesome
+                display: block
+                font-size: 40px
+                margin: 20px 0
+                color: #eb723f
+@media screen and (max-width: 1000px)
+    .content3
+        .cont3_container
+            flex-wrap: wrap
+            justify-content: space-evenly
+            .card
+                width: 30%
+                margin-bottom: 30px
+@media screen and (max-width: 750px)
+    .content3
+        .cont3_container
+            width: 100%
+            .card
+                width: 70%
+@media screen and (max-width: 600px)
+    .content3
+        .cont3_container
+            .card
+                width: 80%
+.content4
+    padding: 60px 0
+    +gray_subtitle
+    +title
+    .filter
+        display: flex
+        justify-content: center
+        margin: 50px auto
+        li
+            display: inline-block
+            cursor: pointer
+            font-weight: 600
+            line-height: 20px
+            padding: 5px
+            color: #212529
+            &:hover
+                color: #eb5d1e
+            &.active
+                color: #eb5d1e
+    .cont4_container
+        margin: 0 auto
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-wrap: wrap
+        .card_container
+            display: flex
+            width: 30%
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            position: relative
+            margin: 20px 10px
+            border-radius: 10px
+            overflow: hidden
+            &:before
+                content: ""
+                position: absolute
+                background: rgba(122, 105, 96, 0.6)
+                top: 0
+                left: 100%
+                right: 0
+                bottom: 0
+                transition: all 0.3s
+            img
+                width: 100%
+            .card_social
+                display: flex
+                position: absolute
+                width: 100%
+                height: 100%
+                justify-content: center
+                align-items: center
+                a
+                    margin: 0 25px
+                    opacity: 0
+                    transform: translateY(-50px)
+                    transition: all 0.3s
+                    i
+                        width: 35px
+                        height: 35px
+                        background: #fff
+                        border-radius: 50%
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        color: #eb5d1e
+                        transition: all 0.3s
+                    &:hover
+                        i
+                            color: #fff
+                            background: #eb5d1e
+            .card_desc
+                position: absolute
+                font-size: 20px
+                color: #fff
+                font-weight: 600
+                text-align: center
+                bottom: 10%
+                transform: translateY(50px)
+                transition: all 0.3s
+                opacity: 0
+                div:nth-child(2)
+                    font-size: 14px
+            &:hover
+                &:before
+                    left: 0
+                .card_social
+                    a
+                        opacity: 1
+                        transform: translateY(0)
+                .card_desc
+                    opacity: 1
+                    transform: translateY(0)
+@media screen and (max-width: 1000px)
+    .content4
+        .cont4_container
+            .card_container
+                width: 46%
+@media screen and (max-width: 770px)
+    .content4
+        .cont4_container
+            .card_container
+                width: 80%
+.content5
+    +gray_subtitle
+    +title
+    padding: 60px 0
+    background: #fef8f5
+    .arcodian_container
+        width: 80%
+        display: flex
+        flex-direction: column
+        margin: 60px auto
+        .box
+            padding: 20px 0
+            position: relative
+            .question
+                color: #343a40
+                font-size: 18px
+                font-weight: 600
+                line-height: 24px
+                margin: 10px 0
+                cursor: pointer
+                &:before
+                    content: "\f078"
+                    position: absolute
+                    left: -25px
+                    font-family: Fontawesome
+                    margin-right: 10px
+                    transition: all 0.3s
+            .answer
+                color: #212529
+                padding-bottom: 10px
+                display: none
+            &:after
+                content: ""
+                position: absolute
+                background: #dbdbdb
+                width: calc(100% + 30px)
+                height: 1px
+                margin: 10px 0
+                transform: translateX(-30px)
+            &.active
+                .question
+                    color: #c54811
+                    &:before
+                        content: "\f077"
+.content6
+    padding: 60px 0
+    +gray_subtitle
+    +title
+    .cont6_container
+        display: flex
+        width: 85%
+        justify-content: space-between
+        flex-wrap: wrap
+        padding: 60px 0
+        margin: 0 auto
+        .team_card
+            position: relative
+            width: 23%
+            overflow: hidden
+            .team_card_container
+                position: relative
+                img
+                    width: 100%
+                .sns_container
+                    position: absolute
+                    background: rgba(78, 64, 57, 0.6)
+                    width: 15%
+                    height: 100%
+                    top: -5px
+                    left: 0
+                    transform: translateX(-80px)
+                    transition: all 0.3s
+                    li
+                        font-size: 22px
+                        margin: 15px auto
+                        color: #fff
+                        text-align: center
+                .desc_container
+                    position: absolute
+                    width: 100%
+                    height: 100%
+                    top: -5px
+                    left: 0
+                    transform: translateY(5%)
+                    opacity: 0
+                    transition: all 0.3s
+                    .desc
+                        position: absolute
+                        text-align: center
+                        right: 15%
+                        bottom: -10%
+                        opacity: 0
+                        transition: all 0.5s
+                        .desc_name
+                            color: #fff
+                            font-weight: 700
+                            font-size: 18px
+                        .desc_job
+                            font-size: 13px
+                            color: #fff
+            &:hover
+                .team_card_container
+                    .sns_container
+                        transform: translateX(0)
+                    .desc_container
+                        background: linear-gradient(0deg, rgba(78, 64, 57, 0.95) 0%, rgba(78, 64, 57, 0.95) 15%, rgba(255, 255, 255, 0) 100%)
+                        transform: translateY(0)
+                        opacity: 1
+                        .desc
+                            right: 15%
+                            bottom: 10%
+                            opacity: 1
+@media screen and (max-width: 1200px)
+    .content6
+        .cont6_container
+            .team_card
+                width: 32%
+                .team_card_container
+                    margin-bottom: 20px
+@media screen and (max-width: 1000px)
+    .content6
+        .cont6_container
+            width: 80%
+            .team_card
+                width: 45%
+                .team_card_container
+                    .desc_container
+                        .desc
+                            right: 25%
+                &:hover
+                    .team_card_container
+                        .desc_container
+                            .desc
+                                right: 25%
+@media screen and (max-width: 750px)
+    .content6
+        .cont6_container
+            width: 70%
+            .team_card
+                width: 100%
+                .team_card_container
+                    .desc_container
+                        .desc
+                            right: 25%
+                &:hover
+                    .team_card_container
+                        .desc_container
+                            .desc
+                                right: 25%
+.content7
+    +gray_subtitle
+    +title
+    padding: 60px 0
+    background: #fef8f5
+    .img_container
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: 50px 10% 0
+        img
+            width: 90px
+            padding: 30px 60px 30px 30px
+        .slick-dots
+            display: flex
+            position: absolute
+            left: 50%
+            bottom: -20%
+            transform: translateX(-50%)
+            li
+                background: #fff
+                margin: 0 5px
+                padding: 5px
+                border: 1px solid #eb5d1e
+                border-radius: 50%
+                cursor: pointer
+            .slick-active
+                background: #eb5d1e
+.content8
+    padding: 60px 0
+    +gray_subtitle
+    +title
+    .cont8_container
+        display: flex
+        flex-wrap: wrap
+        margin: 60px 10%
+        justify-content: space-evenly
+        .left
+            width: 35%
+            display: flex
+            flex-wrap: wrap
+            border-top: 3px solid #eb5d1e
+            border-bottom: 3px solid #eb5d1e
+            box-shadow: 0 0 24px 0 rgb(0 0 0 / 12%)
+            padding: 30px
+            .contact_title
+                width: 100%
+                font-size: 22px
+                font-weight: 600
+                color: #7a6960
+                padding-left: 60px
+                position: relative
+                &:before
+                    position: absolute
+                    content: ""
+                    width: 50px
+                    height: 50px
+                    background: #fdf1ec
+                    border-radius: 50%
+                    left: -1%
+                    transform: translateY(5px)
+                &:nth-child(1)
+                    &:before
+                        content: "\f3c5"
+                        position: absolute
+                        font-family: Fontawesome
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                &:nth-child(3)
+                    &:before
+                        content: "\f0e0"
+                        position: absolute
+                        font-family: Fontawesome
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                &:nth-child(5)
+                    &:before
+                        content: "\f3ce"
+                        position: absolute
+                        font-family: Fontawesome
+                        display: flex
+                        justify-content: center
+                        align-items: center
+            .contact_desc
+                width: 70%
+                font-size: 14px
+                color: #ab9d95
+                padding-bottom: 20px
+                padding-left: 60px
+                
+        .right
+            display: flex
+            width: 55%
+            flex-wrap: wrap
+            justify-content: center
+            border-top: 3px solid #eb5d1e
+            border-bottom: 3px solid #eb5d1e
+            box-shadow: 0 0 24px 0 rgb(0 0 0 / 12%)
+            form
+                display: flex
+                justify-content: space-between
+                flex-wrap: wrap
+                padding: 30px
+                input
+                    height: 30px
+                    padding: 5px
+                    font-size: 14px
+                    border: 1px solid #dbdbdb
+                .form_name
+                    display: flex
+                    width: 48%
+                    flex-direction: column
+                .form_email
+                    display: flex
+                    width: 48%
+                    flex-direction: column
+                .form_subject
+                    display: flex
+                    width: 100%
+                    flex-direction: column
+                    margin: 20px 0
+                .form_message
+                    display: flex
+                    width: 100%
+                    flex-direction: column
+                    textarea
+                        height: 250px
+                        resize: none
+                        border: 1px solid #dbdbdb
+                        padding: 10px
+            .send
+                margin: 30px auto
+                padding: 10px 20px
+                background: #eb5d1e
+                color: #fff
+                border-radius: 7px
+@media screen and (max-width: 1000px)
+    .content8
+        .cont8_container
+            flex-direction: column
+            align-items: center
+            .left
+                width: 70%
+                .contact_desc
+                    margin-bottom: 25px
+                iframe
+                    width: 100%
+                    margin: 0 auto
+            .right  
+                width: 70%
+                margin-top: 50px
+                padding: 30px
+                form
+                    padding: 0
+@media screen and (max-width: 770px)
+    .content8
+        .cont8_container
+            .right
+                form
+                    .form_name
+                        width: 100%
+                        margin-bottom: 20px
+                    .form_email 
+                        width: 100%
+.content9
+    padding: 60px 0
+    background: #fef8f5
+    text-align: center
+    .cont9_title
+        font-size: 24px
+        font-weight: 600
+        color: #4e4039
+        line-height: 1
+        margin-bottom: 20px
+    .cont9_desc
+        margin-bottom: 30px
+        font-size: 15px
+    .newsletter
+        width: 45%
+        margin: 0 auto
+        input
+            width: 77%
+            height: 35px
+            border: 1px solid #fff
+            border-radius: 5px
+            box-shadow: 0px 2px 15px rgb(0 0 0 / 10%)
+        button
+            width: 20%
+            height: 40px
+            background: #eb5d1e
+            color: #fff
+            border-radius: 5px
+            border: none
+            font-size: 16px
+            margin-left: -5px
+@media screen and (max-width: 1000px)
+    .content9
+        .newsletter
+            width: 70%
+@media screen and (max-width: 770px)
+    .content9
+        .newsletter
+            width: 90%
+footer
+    .footer_top
+        margin: 50px 5%
+        .footer_top_container
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-evenly
+            .box
+                width: 20%
+                padding-bottom: 20px
+                .box1_title
+                    font-size: 28px
+                    font-family: "Raleway", sans-serif
+                .box1_detail
+                    margin-top: 10px
+                    font-size: 14px
+                    color: #5c5c5c
+                .box_title
+                    font-weight: bold
+                    font-family: "Raleway", sans-serif
+                    color: #212529
+                    margin: 7px 0
+                .box_detail
+                    font-size: 14px
+                    color: #5c5c5c
+                    padding-left: 10px
+                    li
+                        padding: 10px
+                        position: relative
+                        &:before
+                            content: "\f105"
+                            font-family: Fontawesome
+                            position: absolute
+                            font-size: 14px
+                            color: #f39e7a
+                            left: -3%
+                            transform: translateY(4px)
+                .box4_desc
+                    font-size: 14px
+                .social
+                    font-size: 16px
+                    margin: 10px 0
+                    a
+                        display: inline-block
+                        width: 30px
+                        height: 30px
+                        background: #eb5d1e
+                        border-radius: 50%
+                        position: relative
+                        i
+                            position: absolute
+                            margin-right: 10px
+                            color: #fff
+                            top: 50%
+                            left: 50%
+                            transform: translateX(-50%) translateY(-50%)
+    .footer_bottom
+        background: #fef8f5
+        padding: 40px
+        .footer_bottom_container
+            width: 80%
+            height: 20px
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-between
+            margin: 0 auto 20px auto
+            .footer_bottom_left
+                font-size: 14px
+                color: #212529
+            .footer_bottom_right
+                font-size: 13px
+                color: #212529
+                span
+                    color: #eb5d1e
+@media screen and (max-width: 1000px)
+    footer
+        .footer_top
+            .footer_top_container
+                margin: 0 auto
+                .box    
+                    width: 40%
+@media screen and (max-width: 770px)
+    footer
+        .footer_top
+            .footer_top_container
+                margin: 0 auto
+                .box    
+                    width: 100%
+        .footer_bottom
+            .footer_bottom_container
+                .footer_bottom_left
+                    width: 100%
+                    text-align: center
+                .footer_bottom_right
+                    width: 100%
+                    text-align: center
